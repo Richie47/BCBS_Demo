@@ -1,0 +1,16 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">BCBSAZ Demo</h1>
+    <br />
+    <div class="text-center">
+        POC of making and managing a list of desired expenses for customers. Customers of insurance companies may want to isolate expenses into an itemized list to
+        better track things such as generating Explanation of Benefits (EOB) for HSA/FSA payments, have a quick reminder of what common medicines/procedures are estimated to cost, 
+        or even just to help manage their own medical finances. Ideas like this is how we can Inspire Health and Make It Easy.
+    </div>
+    <br />
+    <a asp-controller="Home" asp-action="ManageExpenses" class="btn btn-secondary">Manage Expenses</a>
+    <a asp-controller="Home" asp-action="About" class="btn btn-primary">About Candidate</a>
+</div>

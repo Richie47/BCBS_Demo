@@ -1,0 +1,24 @@
+﻿@model WebApplication1.Models.ExpenseViewModel
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
+
+@{
+    ViewData["Title"] = "Manage Expenses";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Manage Expenses</h1>
+</div>
+
+<!-- Include the Expense List -->
+<partial name="_CreateEditExpense" model="Model.Expenses" />
+<hr />
+
+<!-- Include the AddExpense form -->
+<partial name="_AddExpense" model="Model.NewExpense" />
+
+
+
+

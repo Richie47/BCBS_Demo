@@ -1,0 +1,35 @@
+﻿@{
+    ViewData["Title"] = "Create / Edit";
+}
+@model List<WebApplication1.Models.Expense>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+    }
+
+<h2>Expenses</h2>
+<table>
+    <tr>
+        <th class="mr-4">Reference ID</th>
+        <th class="mr-4">Name</th>
+        <th class="mr-4">Expense</th>
+    </tr>
+    @foreach (var expense in Model)
+    {
+        <tr>
+            <td class="mr-4">@expense.Id</td>
+            <td class="mr-4">@expense.Name</td>
+            <td class="mr-4">$@expense.Value</td>
+            <td>
+                <a asp-action="DeleteExpense" asp-route-id="@expense.Id" class="btn btn-danger">
+                    Delete
+                </a>
+        </tr>
+    }
+    <tr>
+        <td colspan="2"><strong>Total:</strong></td>
+        <td class="mr-4"><strong>$@Model.Sum(x => x.Value).ToString("F2")</strong></td>
+        <td></td>
+    </tr>
+
+</table>

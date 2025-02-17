@@ -1,0 +1,18 @@
+﻿@model WebApplication1.Models.Expense
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
+<div class="text-center">
+    <h1 class="display-4">Add an expense</h1>
+</div>
+<form asp-action="AddExpenseForm" asp-controller="Home">
+    <label class="mt-4">Name</label>
+    <input class="form-control" type="string" placeholder="" asp-for="Name" />
+
+    <label class="mt-4">Cost</label>
+    <input class="form-control" type="number" placeholder="0" asp-for="Value" min="0.01" step="0.01" required />
+    <span asp-validation-for="Value" class="text-danger"></span>
+    <br />
+    <button class="btn btn-primary mt-4" type="submit">OK</button>
+</form>
